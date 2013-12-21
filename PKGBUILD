@@ -1,7 +1,7 @@
 # Maintainer: Robert Holak <rholak@gmail.com>
 pkgname=greyhole
 pkgver=0.9.35
-pkgrel=1
+pkgrel=4
 pkgdesc="Greyhole is an application that uses Samba to create a storage pool of all your available hard drives and allows you to create redundant copies of the files you store, in order to prevent data loss when part of your hardware fails."
 url="http://greyhole.net"
 arch=('x86_64' 'i686')
@@ -23,7 +23,6 @@ package() {
   cd "${srcdir}/${pkgname}-${pkgver}"
 
   mkdir -p $pkgdir/var/spool/greyhole
-  chmod 777 $pkgdir/var/spool/greyhole
 
   install -m 0755 -D -p greyhole $pkgdir/usr/bin/greyhole
   install -m 0755 -D -p greyhole-dfree $pkgdir/usr/bin/greyhole-dfree

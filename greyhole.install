@@ -1,4 +1,8 @@
 post_install() {
+
+    useradd -U greyhole
+    chown -R greyhole:greyhole /var/spool/greyhole
+
     systemctl restart smbd
 
     echo "Manual Steps:"
